@@ -21,9 +21,9 @@
     purge: yes
   vars:
     packages:
-    - exim4*
-    - postfix*
-    - sendmail*
+      - exim4*
+      - postfix*
+      - sendmail*
   tags:
     - mail
   when:
@@ -36,8 +36,8 @@
     state: present
   vars:
     packages:
-    - msmtp-mta
-    - bsd-mailx
+      - msmtp-mta
+      - bsd-mailx
   tags: mail
   notify: test mail
   when: ansible_os_family == "Debian"
@@ -48,9 +48,9 @@
     state: present
   vars:
     packages:
-    - msmtp
-    - msmtp-mta
-    - s-nail
+      - msmtp
+      - msmtp-mta
+      - s-nail
   when: ansible_os_family == "Archlinux"
 
 - name: Install msmtp and mailx on Alpine.
@@ -60,8 +60,8 @@
     update_cache: no
   vars:
     packages:
-    - msmtp
-    - mailx
+      - msmtp
+      - mailx
   when: ansible_os_family == "Alpine"
 
 - name: Overwrite busybox sendmail link to point to mSMTP.

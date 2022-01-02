@@ -4,23 +4,23 @@ galaxy_info:
   min_ansible_version: 2.4
   license: Apache
   platforms:
-  - name: Debian
-    versions:
-    - jessie
-    - stretch
-    - buster
-  - name: Ubuntu
-    versions:
-    - trusty
-    - xenial
-    - bionic
-  - name: ArchLinux
-    versions:
-    - any
-  - name: Alpine
-    versions:
-    - any
-  tags:
-  - mail
-  - system
-  - networking
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+        - buster
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - bionic
+    - name: ArchLinux
+      versions:
+        - any
+    - name: Alpine
+      versions:
+        - any
+      tags:
+        - mail
+        - system
+        - networking
