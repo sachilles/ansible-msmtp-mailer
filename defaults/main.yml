@@ -34,6 +34,9 @@ msmtp_log: file
 ## If using `syslog`, can be one of 'LOG_USER', 'LOG_MAIL', 'LOG_LOCAL0', …, 'LOG_LOCAL7'.
 msmtp_syslog_facility: "LOG_USER"
 msmtp_logfile: ~/.msmtp.log
+msmtp_logfile_owner:
+msmtp_logfile_group:
+msmtp_logfile_0640:
 
 ## Aliases mail account ( only msmtp_alias_default is required the rest is optional )
 msmtp_alias_default: emailer.tests@yandex.com

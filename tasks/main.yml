@@ -9,7 +9,7 @@
   apt:
     update_cache: yes
     upgrade: "no"
-    cache_valid_time: 14400 # 4 hours
+    cache_valid_time: 14400  # 4 hours
   tags: mail
   when: ansible_os_family == "Debian"
 
@@ -73,11 +73,11 @@
 
 - name: Copy mstprc conf file.
   template:
-     src: msmtprc.j2
-     dest: /etc/msmtprc
-     owner: "{{ msmtprc_owner }}"
-     group: "{{ msmtprc_group }}"
-     mode: "{{ msmtprc_mode }}"
+    src: msmtprc.j2
+    dest: /etc/msmtprc
+    owner: "{{ msmtprc_owner }}"
+    group: "{{ msmtprc_group }}"
+    mode: "{{ msmtprc_mode }}"
   tags: mail
   notify: test mail
 
