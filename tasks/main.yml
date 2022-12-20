@@ -82,7 +82,7 @@
   notify: test mail
 
 - name: Copy aliases conf file.
-  ansible.builtin.tempfile:
+  ansible.builtin.template:
     src: aliases.j2
     dest: /etc/aliases
     owner: root
