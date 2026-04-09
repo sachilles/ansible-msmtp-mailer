@@ -16,10 +16,10 @@ galaxy_info:
         - bionic
     - name: ArchLinux
       versions:
-        - any
+        - all
     - name: Alpine
       versions:
-        - any
+        - all
       tags:
         - mail
         - system
