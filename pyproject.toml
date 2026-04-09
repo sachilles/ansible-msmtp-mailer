@@ -9,6 +9,7 @@ dependencies = []
 [dependency-groups]
 dev = [
     "ansible>=13.5.0",
+    "ansible-lint>=26.4.0",
     "molecule>=26.4.0",
     "molecule-plugins>=25.8.12",
 ]
