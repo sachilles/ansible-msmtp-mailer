@@ -11,7 +11,7 @@
     upgrade: "no"
     cache_valid_time: 14400  # 4 hours
   tags: mail
-  when: ansible_os_family == "Debian"
+  when: ansible_facts["os_family"] == "Debian"
 
 - name: Remove other MTAs.
   ansible.builtin.apt:
@@ -28,7 +28,7 @@
     - mail
   when:
     - msmtp_remove_mtas
-    - ansible_os_family == "Debian"
+    - ansible_facts["os_family"] == "Debian"
 
 - name: Install msmtp and mailx on Debian.
   ansible.builtin.apt:
@@ -40,7 +40,7 @@
       - bsd-mailx
   tags: mail
   notify: test mail
-  when: ansible_os_family == "Debian"
+  when: ansible_facts["os_family"] == "Debian"
 
 - name: Install msmtp and s-nail on Archlinux.
   community.general.pacman:
@@ -51,7 +51,7 @@
       - msmtp
       - msmtp-mta
       - s-nail
-  when: ansible_os_family == "Archlinux"
+  when: ansible_facts["os_family"] == "Archlinux"
 
 - name: Install msmtp and mailx on Alpine.
   community.general.apk:
@@ -62,14 +62,14 @@
     packages:
       - msmtp
       - mailx
-  when: ansible_os_family == "Alpine"
+  when: ansible_facts["os_family"] == "Alpine"
 
 - name: Overwrite busybox sendmail link to point to mSMTP.
   ansible.builtin.file:
     src: /usr/bin/msmtp
     dest: /usr/sbin/sendmail
     state: link
-  when: ansible_os_family == "Alpine"
+  when: ansible_facts["os_family"] == "Alpine"
 
 - name: Copy mstprc conf file.
   ansible.builtin.template:
