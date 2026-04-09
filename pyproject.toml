@@ -1,0 +1,14 @@
+[project]
+name = "ansible-msmtp-mailer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ansible>=13.5.0",
+    "molecule>=26.4.0",
+    "molecule-plugins>=25.8.12",
+]
